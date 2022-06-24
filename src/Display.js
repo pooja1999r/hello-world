@@ -3,22 +3,18 @@ import axios from 'axios';
 import './display.css';
 const URL = 'https://dummyjson.com/products';
 
-
-
-
 export default function Display() {
     const [Data, setData] = useState([]);
 
+    // fetch data during mounting
     useEffect(() => {
         axios.get(URL)
             .then(data => setData(data.data.products))
             .catch(error => console.log(error));
     }, []);
 
-    console.log(Data);
     return (
         <div className='bg-grey'>
-
             <div className='bg-white'>
                 <h1>Items List</h1>
                 <div className='items'>
