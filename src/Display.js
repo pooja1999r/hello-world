@@ -12,14 +12,14 @@ export default function Display() {
             .then(data => setData(data.data.products))
             .catch(error => console.log(error));
     }, []);
-
+    
     return (
         <div className='bg-grey'>
             <div className='bg-white'>
                 <h1>Items List</h1>
                 <div className='items'>
                     {Data.map(item =>
-                        <div key={item.id} className='d-flex'  >
+                        <div key={item.id}  className='d-flex' >
                               <img src={item.images[0]} className="img" />
                             {item.title}
                         </div>)}
